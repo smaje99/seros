@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/seros/static/css/main.09e67b07.chunk.css",
-    "main.js": "/seros/static/js/main.c9acaf0d.chunk.js",
-    "main.js.map": "/seros/static/js/main.c9acaf0d.chunk.js.map",
+    "main.js": "/seros/static/js/main.e18390da.chunk.js",
+    "main.js.map": "/seros/static/js/main.e18390da.chunk.js.map",
     "runtime-main.js": "/seros/static/js/runtime-main.d079787c.js",
     "runtime-main.js.map": "/seros/static/js/runtime-main.d079787c.js.map",
     "static/css/2.679831fc.chunk.css": "/seros/static/css/2.679831fc.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.679831fc.chunk.css",
     "static/js/2.165e0740.chunk.js",
     "static/css/main.09e67b07.chunk.css",
-    "static/js/main.c9acaf0d.chunk.js"
+    "static/js/main.e18390da.chunk.js"
   ]
 }
