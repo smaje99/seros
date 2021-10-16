@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-
+app.use('/api/thematicGroups', require('./routes/thematicGroups.routes'));
 
 // Static files
 app.use('/', express.static(path.join(__dirname, '..', 'dist')));
