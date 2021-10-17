@@ -38,6 +38,18 @@ const rulesCommon = (mode) => [
     rulesBabel(mode)
 ]
 
+// devServer
+const devServer = {
+    client: {
+        logging: 'info',
+        progress: true
+    },
+    historyApiFallback: true,
+    hot: true,
+    open: true,
+    port: 3000
+}
+
 // output
 const output = {
     filename: 'static/js/[name].[contenthash:8].js',
@@ -52,7 +64,9 @@ const commonConfig = (mode) => ({
 })
 
 const devConfig = {
-    ...commonConfig('development')
+    ...commonConfig('development'),
+    output: { publicPath: '/' },
+    devServer
 }
 
 const prodConfig = {
