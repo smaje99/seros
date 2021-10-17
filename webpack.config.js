@@ -57,7 +57,6 @@ const output = {
     filename: 'static/js/[name].[contenthash:8].js',
     chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
     clean: true,
-    publicPath: '/'
 }
 
 // optimization
@@ -100,7 +99,6 @@ const commonConfig = (mode) => ({
 
 const devConfig = {
     ...commonConfig('development'),
-    output: { publicPath: '/' },
     devServer
 }
 
