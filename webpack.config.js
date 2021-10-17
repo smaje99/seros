@@ -1,7 +1,20 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const isProduction = (mode) => mode === 'production';
 const isDevelopment = (mode) => mode === 'development';
+
+// plugins
+const plugins = (mode) => (
+    [
+        new HtmlWebpackPlugin({
+            title: 'SEROS',
+            filename: 'index.html',
+            template: path.join(__dirname, 'public', 'index.html'),
+            inject: 'body'
+        })
+    ].filter(Boolean)
+)
 
 // rules
 const rulesBabel = (mode) => ({
@@ -28,7 +41,8 @@ const rulesCommon = (mode) => [
 // config
 const commonConfig = (mode) => ({
     entry: path.join(__dirname, 'src', 'app'),
-    module: { rules: rulesCommon(mode) }
+    module: { rules: rulesCommon(mode) },
+    plugins: plugins(mode)
 })
 
 const devConfig = {
