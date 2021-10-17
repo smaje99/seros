@@ -1,6 +1,7 @@
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = (mode) => mode === 'production';
 const isDevelopment = (mode) => mode === 'development';
@@ -54,7 +55,21 @@ const devServer = {
 // output
 const output = {
     filename: 'static/js/[name].[contenthash:8].js',
-    clean: true
+    chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
+    clean: true,
+    publicPath: '/'
+}
+
+// optimization
+const optimization = {
+    minimize: true,
+    minimizer: [
+        new TerserPlugin()
+    ],
+    splitChunks: {
+        chunks: 'all'
+    },
+    nodeEnv: 'production'
 }
 
 // resolve
@@ -91,7 +106,8 @@ const devConfig = {
 
 const prodConfig = {
     ...commonConfig('production'),
-    output
+    output,
+    optimization
 }
 
 module.exports = (env, { mode }) => (
