@@ -1,3 +1,4 @@
+const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -56,9 +57,22 @@ const output = {
     clean: true
 }
 
+// resolve
+const resolve = {
+    alias: {
+        Pages: path.resolve(__dirname, 'src', 'app', 'pages'),
+        Auth: path.resolve(__dirname, 'src', 'app', 'auth'),
+        Routers: path.resolve(__dirname, 'src', 'app', 'routers'),
+        Helpers: path.resolve(__dirname, 'src', 'app', 'helpers')
+    },
+    extensions: ['jsx', '...'],
+    plugins: [ new DirectoryNamedWebpackPlugin() ]
+}
+
 // config
 const commonConfig = (mode) => ({
     entry: path.join(__dirname, 'src', 'app'),
+    resolve,
     module: { rules: rulesCommon(mode) },
     plugins: plugins(mode)
 })
