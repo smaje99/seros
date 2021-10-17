@@ -1,7 +1,7 @@
 import { Route, Redirect } from 'react-router-dom';
 
-import useAuth from '../auth/useAuth';
-import routes from '../../helpers/routes';
+import useAuth from 'Auth/useAuth';
+import routes from 'Helpers/routes';
 
 const PublicRoute = (props) => {
     const { isLogged } = useAuth();

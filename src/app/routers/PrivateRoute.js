@@ -1,7 +1,7 @@
 import { Route, Redirect, useLocation } from 'react-router-dom';
 
-import useAuth from '../auth/useAuth';
-import routes from '../../helpers/routes';
+import useAuth from 'Auth/useAuth';
+import routes from 'Helpers/routes';
 
 const PrivateRoute = (props) => {
     const location = useLocation();
