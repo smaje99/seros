@@ -87,7 +87,7 @@ const resolve = {
 
 // devtool
 const devtool = (mode) => (
-    isProduction(mode) ? 'source-map' : 'cheap-module-source-map'
+    isProduction(mode) ? 'hidden-nosources-source-map' : 'cheap-module-source-map'
 )
 
 // config
