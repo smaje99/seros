@@ -1,5 +1,7 @@
 import ReactDom from "react-dom";
 
+import 'normalize.css';
+
 import App from './App';
 
 ReactDom.render(
