@@ -38,6 +38,12 @@ const rulesCommon = (mode) => [
     rulesBabel(mode)
 ]
 
+// output
+const output = {
+    filename: 'static/js/[name].[contenthash:8].js',
+    clean: true
+}
+
 // config
 const commonConfig = (mode) => ({
     entry: path.join(__dirname, 'src', 'app'),
@@ -50,7 +56,8 @@ const devConfig = {
 }
 
 const prodConfig = {
-    ...commonConfig('production')
+    ...commonConfig('production'),
+    output
 }
 
 module.exports = (env, { mode }) => (
