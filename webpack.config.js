@@ -81,7 +81,7 @@ const resolve = {
         Routers: path.resolve(__dirname, 'src', 'app', 'routers'),
         Helpers: path.resolve(__dirname, 'src', 'app', 'helpers')
     },
-    extensions: ['jsx', '...'],
+    extensions: ['.jsx', '...'],
     plugins: [ new DirectoryNamedWebpackPlugin() ]
 }
 
@@ -92,7 +92,7 @@ const devtool = (mode) => (
 
 // config
 const commonConfig = (mode) => ({
-    entry: path.join(__dirname, 'src', 'app'),
+    entry: path.join(__dirname, 'src', 'app', 'index.js'),
     resolve,
     module: { rules: rulesCommon(mode) },
     plugins: plugins(mode),
