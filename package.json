@@ -7,7 +7,8 @@
     "start": "node src/index.js",
     "server": "nodemon src/index.js",
     "build": "webpack --mode=production",
-    "dev": "webpack serve --mode=development"
+    "dev": "webpack serve --mode=development",
+    "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "repository": {
     "type": "git",
