@@ -69,12 +69,18 @@ const resolve = {
     plugins: [ new DirectoryNamedWebpackPlugin() ]
 }
 
+// devtool
+const devtool = (mode) => (
+    isProduction(mode) ? 'source-map' : 'cheap-module-source-map'
+)
+
 // config
 const commonConfig = (mode) => ({
     entry: path.join(__dirname, 'src', 'app'),
     resolve,
     module: { rules: rulesCommon(mode) },
-    plugins: plugins(mode)
+    plugins: plugins(mode),
+    devtool: devtool(mode)
 })
 
 const devConfig = {
