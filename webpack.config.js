@@ -1,4 +1,5 @@
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -14,7 +15,8 @@ const plugins = (mode) => (
             filename: 'index.html',
             template: path.join(__dirname, 'public', 'index.html'),
             inject: 'body'
-        })
+        }),
+        new Dotenv()
     ].filter(Boolean)
 )
 
