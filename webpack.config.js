@@ -67,10 +67,6 @@ const rulesCommon = (mode) => [
 
 // devServer
 const devServer = {
-    client: {
-        logging: 'info',
-        progress: true
-    },
     historyApiFallback: true,
     hot: true,
     open: true,
