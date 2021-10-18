@@ -107,7 +107,8 @@ const resolve = {
         Routers: path.resolve(__dirname, 'src', 'app', 'routers'),
         Helpers: path.resolve(__dirname, 'src', 'app', 'helpers'),
         Utils: path.resolve(__dirname, 'src', 'app', 'utils'),
-        Components: path.resolve(__dirname, 'src', 'app', 'components')
+        Components: path.resolve(__dirname, 'src', 'app', 'components'),
+        Images: path.resolve(__dirname, 'src', 'app', 'assets', 'images')
     },
     extensions: ['.jsx', '...'],
     plugins: [ new DirectoryNamedWebpackPlugin() ]
