@@ -59,10 +59,16 @@ const rulesFonts = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i
 }
 
+const rulesSvg = {
+    test: /\.svg$/i,
+    use: [ '@svgr/webpack' ]
+}
+
 const rulesCommon = (mode) => [
     rulesBabel(mode),
     rulesStyles(mode),
-    rulesFonts
+    rulesFonts,
+    rulesSvg
 ]
 
 // devServer
