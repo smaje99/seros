@@ -1,6 +1,8 @@
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -16,7 +18,11 @@ const plugins = (mode) => (
             template: path.join(__dirname, 'public', 'index.html'),
             inject: 'body'
         }),
-        new Dotenv()
+        new Dotenv(),
+        isProduction(mode) && new MiniCssExtractPlugin({
+            filename: 'static/css/[name].[contenthash:8].css',
+            chunkFilename: 'static/css/[name].[contenthash:8].chunk.css'
+        })
     ].filter(Boolean)
 )
 
@@ -38,8 +44,19 @@ const rulesBabel = (mode) => ({
     }
 })
 
+const rulesStyles = (mode) => ({
+    test: /\.css$/i,
+    use: [
+        isProduction(mode)
+            ? MiniCssExtractPlugin.loader
+            : 'style-loader',
+        'css-loader'
+    ]
+})
+
 const rulesCommon = (mode) => [
-    rulesBabel(mode)
+    rulesBabel(mode),
+    rulesStyles(mode)
 ]
 
 // devServer
@@ -65,7 +82,8 @@ const output = {
 const optimization = {
     minimize: true,
     minimizer: [
-        new TerserPlugin()
+        new TerserPlugin(),
+        new CssMinimizerPlugin()
     ],
     splitChunks: {
         chunks: 'all'
