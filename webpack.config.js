@@ -99,7 +99,9 @@ const resolve = {
         Pages: path.resolve(__dirname, 'src', 'app', 'pages'),
         Auth: path.resolve(__dirname, 'src', 'app', 'auth'),
         Routers: path.resolve(__dirname, 'src', 'app', 'routers'),
-        Helpers: path.resolve(__dirname, 'src', 'app', 'helpers')
+        Helpers: path.resolve(__dirname, 'src', 'app', 'helpers'),
+        Utils: path.resolve(__dirname, 'src', 'app', 'utils'),
+        Components: path.resolve(__dirname, 'src', 'app', 'components')
     },
     extensions: ['.jsx', '...'],
     plugins: [ new DirectoryNamedWebpackPlugin() ]
