@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url('../assets/fonts/Ubuntu-R.ttf');
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../assets/fonts/OpenSans-Regular.ttf');
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(90deg, #D3CCE3 0%, #E9E4F0 100%);
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+    width: 1rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #b5adc5;
+    border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #E9E4F0;
+}
+
+.fixed {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.img-shadow {
+    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.8));
+}
+
+.link {
+    text-decoration: none;
+}
