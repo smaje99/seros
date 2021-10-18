@@ -59,10 +59,16 @@ const rulesFonts = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i
 }
 
+const rulesImages = {
+    type: 'asset/resource',
+    test: /\.(svg|png|jpe?g|gif)$/i
+}
+
 const rulesCommon = (mode) => [
     rulesBabel(mode),
     rulesStyles(mode),
-    rulesFonts
+    rulesFonts,
+    rulesImages
 ]
 
 // devServer
