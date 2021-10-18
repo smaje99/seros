@@ -6,6 +6,8 @@ import SearchBar from 'Components/SearchBar';
 import routes from 'Helpers/routes';
 import { scrollTo, scrollTop, eventScroll } from 'Utils/scroll';
 
+import SEROS from 'Images/seros.svg';
+
 import './style.css';
 
 const Navigation = () => {
@@ -31,7 +33,7 @@ const Navigation = () => {
                 onClick={handleScrollToUp}
             >
                 <img
-                    src="assets/img/seros.svg"
+                    src={SEROS}
                     alt="Logotipo SEROS"
                     className="navbar__brand--logo img-shadow"
                 />
