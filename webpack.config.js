@@ -54,9 +54,15 @@ const rulesStyles = (mode) => ({
     ]
 })
 
+const rulesFonts = {
+    type: 'asset/resource',
+    test: /\.(woff|woff2|eot|ttf|otf)$/i
+}
+
 const rulesCommon = (mode) => [
     rulesBabel(mode),
-    rulesStyles(mode)
+    rulesStyles(mode),
+    rulesFonts
 ]
 
 // devServer
