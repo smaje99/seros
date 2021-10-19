@@ -1,6 +1,14 @@
+import { Helmet } from 'react-helmet';
+
 const Notes = () => {
     return (
-        <h1>Notes</h1>
+        <>
+            <Helmet>
+                <title>Apuntes | SEROS</title>
+            </Helmet>
+
+            <h1>Login</h1>
+        </>
     )
 }
 

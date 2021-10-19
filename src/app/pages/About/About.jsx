@@ -1,6 +1,14 @@
+import { Helmet } from 'react-helmet';
+
 const About = () => {
     return (
-        <h1>About</h1>
+        <>
+            <Helmet>
+                <title>Acerca de | SEROS</title>
+            </Helmet>
+
+            <h1>About</h1>
+        </>
     )
 }
 

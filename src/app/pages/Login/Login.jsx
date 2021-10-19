@@ -1,6 +1,14 @@
+import { Helmet } from 'react-helmet';
+
 const Login = () => {
     return (
-        <h1>Login</h1>
+        <>
+            <Helmet>
+                <title>Iniciar Sesión | SEROS</title>
+            </Helmet>
+
+            <h1>Login</h1>
+        </>
     )
 }
 

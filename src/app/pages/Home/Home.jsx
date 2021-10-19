@@ -1,3 +1,5 @@
+import { Helmet } from 'react-helmet';
+
 import Group from 'Pages/Home/components/Group';
 
 import SEROS from 'Images/seros.svg';
@@ -10,6 +12,10 @@ const groups = [ 'intro', 'algo', 'lineal', 'no-lineal' ]
 const Home = () => {
     return (
         <>
+            <Helmet>
+                <title>Inicio | SEROS</title>
+            </Helmet>
+
             <header className="home__header">
                 <img
                     src={SEROS}
