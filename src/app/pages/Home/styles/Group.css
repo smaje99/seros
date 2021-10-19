@@ -1,0 +1,26 @@
+.group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.group--title {
+    font: 500 2.8rem Ubuntu;
+    letter-spacing: 0.035em;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.group__content {
+    width: 80%;
+    display: grid;
+    grid-column: 4;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding-left: 8rem;
+}
