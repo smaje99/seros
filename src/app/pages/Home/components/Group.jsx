@@ -14,8 +14,8 @@ const Group = ({ name }) => {
     const getGroup = async () => {
         const res = await fetch(`${API}/thematicGroups/${name}`);
         const data = await res.json();
-        setTitle(data[0].title);
-        setGroup(data[0].group);
+        setTitle(data.title);
+        setGroup(data.group);
     }
 
     useEffect(getGroup, []);
