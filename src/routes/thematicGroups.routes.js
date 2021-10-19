@@ -11,7 +11,7 @@ router.get('/:name', async (req, res) => {
     if (!groups.includes(name)) res.status(404).end();
 
     const thematicGroup = await ThematicGroup.find({ name: name });
-    res.json(thematicGroup);
+    res.json(thematicGroup[0]);
 })
 
 module.exports = router;
