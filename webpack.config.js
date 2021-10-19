@@ -13,7 +13,6 @@ const isDevelopment = (mode) => mode === 'development';
 const plugins = (mode) => (
     [
         new HtmlWebpackPlugin({
-            title: 'SEROS',
             filename: 'index.html',
             template: path.join(__dirname, 'public', 'index.html'),
             inject: 'body'
