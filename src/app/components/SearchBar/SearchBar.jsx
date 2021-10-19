@@ -54,7 +54,7 @@ const SearchBar = ({ activate, staticComponent, noFocus }) => {
                 required
             />
             <label
-                for="search"
+                htmlFor="search"
                 ref={labelRef}
                 onClick={handleActiveBar}
             >
