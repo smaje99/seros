@@ -34,12 +34,15 @@ const rulesBabel = (mode) => ({
         loader: 'babel-loader',
         options: {
             presets: [
-                '@babel/preset-env',
+                ['@babel/preset-env', {
+                    useBuiltIns: 'usage',
+                    corejs: 3.18
+                }],
                 ['@babel/preset-react', {
                     runtime: 'automatic',
                     development: isDevelopment(mode)
                 }]
-            ]
+            ],
         }
     }
 })
