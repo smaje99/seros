@@ -6,11 +6,11 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const history = useHistory();
 
-    const [user, setUser] = useState(null, AuthContext);
+    const [user, setUser] = useState(null);
 
     const login = (userCredentials, fromLocation) => {
         setUser(userCredentials);
-        fromLocation && fromLocation.push(fromLocation);
+        fromLocation && history.push(fromLocation);
     }
 
     const logout = () => setUser(null);
