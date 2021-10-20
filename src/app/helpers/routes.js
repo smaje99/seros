@@ -1,6 +1,6 @@
 const dynamicRoute = (route, routeId) => (
-    routeId ? `/${route}/${routeId}` : `/${route}/routeId`
-);
+    routeId ? `/${route}/${routeId}` : `/${route}/:routeId`
+)
 
 const routes = {
     home: '/',
@@ -10,6 +10,6 @@ const routes = {
     notes: '/notes',
     about: '/about',
     thematic: (thematicId) => dynamicRoute('thematic', thematicId)
-};
+}
 
 export default routes;

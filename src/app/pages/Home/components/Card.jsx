@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import routes from 'Helpers/routes';
+
 import '../styles/Card.css';
 
 const Card = ({ name, path, icon, description }) => {
@@ -17,7 +19,7 @@ const Card = ({ name, path, icon, description }) => {
                 </div>
                 <div className="card__side card__side--back">
                     <p className="card--description">{description}</p>
-                    <Link className="card--path link" to={path}>
+                    <Link className="card--path link" to={routes.thematic(path)}>
                         Ver más
                     </Link>
                 </div>
