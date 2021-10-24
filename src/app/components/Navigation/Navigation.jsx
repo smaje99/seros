@@ -53,10 +53,10 @@ const Navigation = () => {
                         Acerca de
                     </NavLink>
                 </li>
-                <li className="navbar__nav--items">
+                <li className="navbar__nav--item">
                     <div className="navbar__nav--vertical-separator"></div>
                 </li>
-                <li className="navbar__nav--items">
+                <li className="navbar__nav--item">
                     <NavLink
                         className="navbar__user--login navbar__link link"
                         to={routes.login}
@@ -64,7 +64,7 @@ const Navigation = () => {
                         Iniciar Sesión
                     </NavLink>
                 </li>
-                <li className="navbar__nav--items">
+                <li className="navbar__nav--item">
                     <SearchBar activate staticComponent noFocus />
                 </li>
             </ul>

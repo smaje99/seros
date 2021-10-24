@@ -79,3 +79,10 @@
         2px 2px 8px #0065cf,
         -2px -2px 8px #0065cf;
 }
+
+@media (max-width: 880px) {
+    .navbar__nav--item:not(:nth-child(1n+4)),
+    .navbar__nav--item:last-child {
+        display: none;
+    }
+}
