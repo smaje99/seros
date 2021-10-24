@@ -13,6 +13,8 @@ import './style.css';
 const Navigation = () => {
     const navbarRef = useRef();
 
+    const burgerRef = useRef();
+
     const handleScrollToUp = () => scrollTop() && scrollTo();
 
     const handleScrollBorder = useCallback(() => {
@@ -24,6 +26,10 @@ const Navigation = () => {
     }, [])
 
     useEffect(() => eventScroll(handleScrollBorder), [handleScrollBorder]);
+
+    const handleBurger = () => {
+        burgerRef.current.classList.toggle('open');
+    }
 
     return (
         <nav className="navbar fixed" ref={navbarRef}>
@@ -66,6 +72,10 @@ const Navigation = () => {
                 </li>
                 <li className="navbar__nav--item">
                     <SearchBar activate staticComponent noFocus />
+                </li>
+                <li className="navbar__nav--item" ref={burgerRef}>
+                    <div className="navbar__burger" onClick={handleBurger}>
+                    </div>
                 </li>
             </ul>
         </nav>
