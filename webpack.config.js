@@ -110,7 +110,8 @@ const resolve = {
         Helpers: path.resolve(__dirname, 'src', 'app', 'helpers'),
         Utils: path.resolve(__dirname, 'src', 'app', 'utils'),
         Components: path.resolve(__dirname, 'src', 'app', 'components'),
-        Images: path.resolve(__dirname, 'src', 'app', 'assets', 'images')
+        Images: path.resolve(__dirname, 'src', 'app', 'assets', 'images'),
+        Hooks: path.resolve(__dirname, 'src', 'app', 'hooks')
     },
     extensions: ['.jsx', '...'],
     plugins: [ new DirectoryNamedWebpackPlugin() ]
