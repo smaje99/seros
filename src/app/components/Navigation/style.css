@@ -116,13 +116,6 @@
     transform: translateY(.8rem);
 }
 
-.navbar__burger:hover,
-.navbar__burger:hover::before,
-.navbar__burger:hover::after {
-    background-color: #86768a;
-    transition: all .5s ease-in-out;
-}
-
 .navbar__nav--item:last-child.open .navbar__burger {
     transform: translateX(-5rem);
     background: transparent;

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import SearchBar from 'Components/SearchBar';
 
@@ -10,7 +11,7 @@ import SEROS from 'Images/seros.svg';
 
 import './style.css';
 
-const Navigation = () => {
+const Navigation = ({ openModal, closeModal }) => {
     const navbarRef = useRef();
 
     const burgerRef = useRef();
@@ -28,7 +29,9 @@ const Navigation = () => {
     useEffect(() => eventScroll(handleScrollBorder), [handleScrollBorder]);
 
     const handleBurger = () => {
-        burgerRef.current.classList.toggle('open');
+        burgerRef.current.classList.toggle('open')
+            ? openModal()
+            : closeModal()
     }
 
     return (
@@ -80,6 +83,11 @@ const Navigation = () => {
             </ul>
         </nav>
     )
+}
+
+Navigation.propTypes = {
+    openModal: PropTypes.func.isRequired,
+    closeModal: PropTypes.func.isRequired
 }
 
 export default Navigation;
