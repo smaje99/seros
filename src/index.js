@@ -4,6 +4,11 @@ const cors = require('cors');
 const path = require('path');
 
 const { PORT } = require('./utils/config');
+const {
+    logErrors,
+    wrapErrors,
+    errorHandler
+} = require('./utils/middleware/errorHandlers');
 const notFoundHandler = require('./utils/middleware/notFoundHandler');
 
 const app = express();
@@ -27,6 +32,11 @@ app.use('/', express.static(path.join(__dirname, '..', 'dist')));
 
 // Catch 404
 app.use(notFoundHandler);
+
+// Errors middleware
+app.use(logErrors);
+app.use(wrapErrors);
+app.use(errorHandler);
 
 
 // Starting server
