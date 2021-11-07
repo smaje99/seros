@@ -2,11 +2,14 @@ const express = require('express');
 
 const ThematicGroupsService = require('../services/ThematicGroups.service');
 
+const nameSchema = require('../utils/schemas/thematicGroup');
+const validationHandler = require('../utils/middleware/validationHandler');
+
 const router = express.Router();
 
 const service = new ThematicGroupsService();
 
-router.get('/:name', async (req, res) => {
+router.get('/:name', validationHandler(nameSchema, 'params'), async (req, res) => {
     const { name } = req.params;
 
     try {
