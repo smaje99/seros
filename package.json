@@ -30,7 +30,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@hapi/boom": "^9.1.4",
-    "@hapi/joi": "^17.1.1",
     "core-js": "^3.18.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
