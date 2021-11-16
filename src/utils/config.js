@@ -3,6 +3,9 @@ const dotenv = require('dotenv');
 dotenv.config()
 
 module.exports = {
-    URI_DB: process.env.URI_DB,
-    PORT: process.env.PORT
+    PORT: process.env.PORT,
+    DETA: {
+        ID: process.env.DETA_ID,
+        KEY: process.env.DETA_KEY
+    }
 }
