@@ -13,6 +13,7 @@ const Card = ({ name, path, icon, description }) => {
                     <img
                         src={icon}
                         alt="temática"
+                        loading="lazy"
                         className="card--icon img-shadow"
                     />
                     <span className="card--name">{name}</span>
