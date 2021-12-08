@@ -1,11 +1,9 @@
 .navbar {
-    height: 2.5rem;
-    width: 100%;
     display: flex;
+    place-content: baseline space-between;
+    align-items: center;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 2.3rem;
+    top: 0;
     border-bottom: none;
     background: linear-gradient(90deg, #D3CCE3 0%, #E9E4F0 100%);
 }
@@ -21,8 +19,8 @@
 .navbar__brand {
     display: flex;
     align-items: center;
-    gap: .9rem;
-    margin: 0 0 1rem 2rem;
+    gap: .8rem;
+    margin-left: 2rem;
 }
 
 .navbar__brand--logo {
@@ -33,20 +31,15 @@
     color: #111;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.045em;
-    font: 600 21pt Ubuntu;
+    font: 600 18pt Ubuntu;
 }
 
 .navbar__nav {
     display: flex;
-    justify-content: space-between;
+    place-content: center space-between;
     align-items: center;
     gap: 1.9rem;
-    margin-right: .5rem;
-}
-
-.navbar__module--item,
-.navbar__link {
-    display: inline-block;
+    margin-right: .4rem;
 }
 
 .navbar__nav--vertical-separator {
@@ -55,11 +48,12 @@
 }
 
 .navbar__link {
+    display: inline-block;
     color: #111;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     letter-spacing: 0.045em;
     transition: all .3s ease 0s;
-    font: 600 1.7rem Ubuntu;
+    font: 600 12pt Ubuntu;
 }
 
 .navbar__link:hover {
@@ -70,7 +64,7 @@
     color: #e5ddf0;
     background-color: #0075f1;
     border-radius: 1rem;
-    padding: .8rem 1.8rem;
+    padding: .8rem 1.2rem;
 }
 
 .navbar__user--login:hover {
