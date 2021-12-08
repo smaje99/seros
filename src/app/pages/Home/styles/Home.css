@@ -1,31 +1,35 @@
 .home__header {
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 54px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    place-content: center;
     align-items: center;
     gap: .3rem;
 }
 
 .home__header--logo {
-    width: 40rem;
+    width: 44vh;
+    padding-bottom: 1rem;
 }
 
 .home__header--seros,
 .home__header--title {
-    animation: focus-in-expand-fwd 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation:
+        focus-in-expand-fwd 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .home__header--seros {
-    font: 400 56pt Ubuntu;
+    font: 400 48pt Ubuntu;
     letter-spacing: 0.045em;
     text-shadow: 0 4px 4px rgba(0, 0, 0, .5);
 }
 
 .home__header--title {
-    font: 3.2rem Ubuntu;
+    font: 20pt Ubuntu;
     letter-spacing: 0.005em;
     text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    text-align: center;
+    padding: 0 .5rem;
 }
 
 .home__groups {
@@ -41,7 +45,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    row-gap: .5rem;
+    row-gap: 3rem;
     margin: 18rem auto 3rem;
 }
 
@@ -51,6 +55,7 @@
     letter-spacing: 0.025em;
     text-align: center;
     line-height: 2.4rem;
+    padding: 0 .5rem;
 }
 
 .home__footer--heart {
