@@ -7,7 +7,7 @@ import '../styles/Card.css';
 
 const Card = ({ name, path, icon, description }) => {
     return (
-        <div className="card-content">
+        <li className="card-content">
             <div className="card">
                 <div className="card__side card__side--front">
                     <img
@@ -24,7 +24,7 @@ const Card = ({ name, path, icon, description }) => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </li>
     )
 }
 
