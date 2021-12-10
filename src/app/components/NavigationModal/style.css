@@ -1,7 +1,7 @@
 .modal {
     position: absolute;
-    inset: 4.8rem 0 0;
-    background: linear-gradient(90deg, #D3CCE3 0%, #E9E4F0 100%);
+    inset: var(--nav-size) 0 0;
+    background: var(--back);
     background-attachment: fixed;
     border: none;
     outline: 0;
