@@ -8,6 +8,10 @@
     src: url('../assets/fonts/OpenSans-Regular.ttf');
 }
 
+:root {
+    --nav-size: 5.4rem;
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;

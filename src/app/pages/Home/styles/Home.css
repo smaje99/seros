@@ -1,5 +1,5 @@
 .home__header {
-    height: calc(100vh - 54px);
+    height: calc(100vh - var(--nav-size));
     display: flex;
     flex-direction: column;
     place-content: center;
