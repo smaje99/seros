@@ -8,8 +8,11 @@
 }
 
 .home__header--logo {
-    width: 44vh;
+    width: 27.82%;
+    min-width: 44vh;
+    max-width: 55rem;
     padding-bottom: 1rem;
+    image-rendering: crisp-edges;
 }
 
 .home__header--seros,
