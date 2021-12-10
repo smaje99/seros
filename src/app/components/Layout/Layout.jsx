@@ -1,6 +1,7 @@
+import MenuModal from 'Components/MenuModal';
 import Navigation from "Components/Navigation";
+
 import useModal from 'Hooks/useModal';
-import NavigationModal from "../NavigationModal/NavigationModal";
 
 const Layout = ({ children }) => {
     const [isOpenModal, openModal, closeModal] = useModal();
@@ -9,7 +10,7 @@ const Layout = ({ children }) => {
         <>
             <Navigation {...{openModal, closeModal}}/>
             {children}
-            <NavigationModal isOpen={isOpenModal} />
+            <MenuModal isOpen={isOpenModal} />
         </>
     )
 }

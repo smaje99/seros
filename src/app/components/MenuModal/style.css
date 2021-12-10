@@ -1,4 +1,4 @@
-.modal {
+.menu-modal {
     position: absolute;
     inset: var(--nav-size) 0 0;
     background: var(--back);
