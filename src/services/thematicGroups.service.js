@@ -1,9 +1,10 @@
 const ThematicGroup = require('../models/ThematicGroup');
 
+const model = new ThematicGroup();
+
 class ThematicGroupService {
-    async getThematicGroup(name) {
-        const thematicGroup = await ThematicGroup.find({ name });
-        return thematicGroup[0];
+    getThematicGroup(name) {
+        return model.get(name);
     }
 }
 
