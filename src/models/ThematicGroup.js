@@ -1,19 +1,13 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const { database } = require('../utils/deta');
 
-const ThematicGroupSchema = new Schema({
-    name: { type: String, require: false },
-    title: { type: String, require: true },
-    group: { type: [], require: true }
-}, { collection: 'ThematicGroups' });
+const base = database('ThematicGroups');
 
-ThematicGroupSchema.set('toJSON', {
-    transform: (document, returnedObject) => {
-        delete returnedObject._id;
-        delete returnedObject.name;
+class ThematicGroup {
+    async get(name) {
+        const thematicGroup = await base.get(name);
+        delete thematicGroup.key;
+        return thematicGroup;
     }
-})
+}
 
-const ThematicGroups = mongoose.model('ThematicGroup', ThematicGroupSchema);
-
-module.exports = ThematicGroups;
+module.exports = ThematicGroup;

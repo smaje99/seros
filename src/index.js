@@ -13,9 +13,6 @@ const notFoundHandler = require('./utils/middleware/notFoundHandler');
 
 const app = express();
 
-// MongoDB connection
-require('./database');
-
 // Settings
 app.set('port', PORT);
 
