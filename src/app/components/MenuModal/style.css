@@ -7,3 +7,7 @@
     padding: 8%;
     outline: 0;
 }
+
+.menu-modal__link {
+    font: var(--f-b-12-u);
+}

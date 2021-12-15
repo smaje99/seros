@@ -72,7 +72,7 @@
     border-radius: 1rem;
     outline: 0;
     cursor: pointer;
-    font: bold 1.5rem Ubuntu;
+    font: var(--f-b-12-u);
     letter-spacing: .005em;
 }
 
