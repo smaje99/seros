@@ -1,5 +1,5 @@
 const dynamicRoute = (route, routeId) => (
-    routeId ? `/${route}/${routeId}` : `/${route}/:routeId`
+    routeId ? `/${route}/${routeId}` : `/${route}/:${route}Id`
 )
 
 const routes = {
