@@ -53,12 +53,12 @@ const Navigation = ({ openModal, closeModal }) => {
 
             <ul className="navbar__nav list">
                 <li className="navbar__nav--item">
-                    <NavLink className="navbar__link link" to={routes.notes}>
+                    <NavLink className="navbar__link link list-item" to={routes.notes}>
                         Apuntes
                     </NavLink>
                 </li>
                 <li className="navbar__nav--item">
-                    <NavLink className="navbar__link link" to={routes.about}>
+                    <NavLink className="navbar__link link list-item" to={routes.about}>
                         Acerca de
                     </NavLink>
                 </li>
@@ -67,7 +67,7 @@ const Navigation = ({ openModal, closeModal }) => {
                 </li>
                 <li className="navbar__nav--item">
                     <NavLink
-                        className="navbar__user--login navbar__link link"
+                        className="navbar__user--login navbar__link link list-item"
                         to={routes.login}
                     >
                         Iniciar Sesión

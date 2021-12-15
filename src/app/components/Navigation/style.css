@@ -43,15 +43,6 @@
     border-left: .27rem solid #111;
 }
 
-.navbar__link {
-    display: inline-block;
-    color: #111;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    letter-spacing: 0.045em;
-    transition: all .3s ease 0s;
-    font: var(--f-b-12-u);
-}
-
 .navbar__link:hover {
     color: #1119;
 }

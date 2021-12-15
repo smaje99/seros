@@ -16,12 +16,12 @@ const MenuModal = ({ isOpen }) => {
             </div>
             <ul className="menu-modal__menu list">
                 <li className="menu-modal__menu--item">
-                    <Link className="menu-modal__link link" to={routes.notes}>
+                    <Link className="menu-modal__link link list-item" to={routes.notes}>
                         Apuntes
                     </Link>
                 </li>
                 <li className="menu-modal__menu--item">
-                    <Link className="menu-modal__link link" to={routes.about}>
+                    <Link className="menu-modal__link link list-item" to={routes.about}>
                         Acerca de
                     </Link>
                 </li>
