@@ -14,7 +14,7 @@ const MenuModal = ({ isOpen }) => {
             <div className="menu-modal__search">
                 <SearchBar activate staticComponent noFocus/>
             </div>
-            <ul menu__menu>
+            <ul className="menu-modal__menu list">
                 <li className="menu-modal__menu--item">
                     <Link className="menu-modal__link link" to={routes.notes}>
                         Apuntes

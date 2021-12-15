@@ -12,10 +12,6 @@
     border-bottom: .1rem solid #b5adc5;
 }
 
-.navbar > ul {
-    list-style: none;
-}
-
 .navbar__brand {
     display: flex;
     align-items: center;

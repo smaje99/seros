@@ -51,7 +51,7 @@ const Navigation = ({ openModal, closeModal }) => {
                 </span>
             </NavLink>
 
-            <ul className="navbar__nav">
+            <ul className="navbar__nav list">
                 <li className="navbar__nav--item">
                     <NavLink className="navbar__link link" to={routes.notes}>
                         Apuntes

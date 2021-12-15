@@ -23,7 +23,7 @@ const Group = ({ name }) => {
     return (
         <section className="group">
             <h2 className="group--title">{title}</h2>
-            <ul className="group__content">
+            <ul className="group__content list">
                 {group.map(thematic => (
                     <Card {...thematic} key={thematic.name} />
                 ))}

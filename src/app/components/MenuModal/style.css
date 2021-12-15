@@ -4,5 +4,6 @@
     background: var(--back);
     background-attachment: fixed;
     border: none;
+    padding: 8%;
     outline: 0;
 }
