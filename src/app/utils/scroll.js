@@ -1,4 +1,4 @@
-const $ = (selector) => document.querySelector(selector);
+import $ from 'Utils/dom';
 
 export const scrollTop = () => $('html').scrollTop;
 
