@@ -8,13 +8,28 @@
     src: url('../assets/fonts/OpenSans-Regular.ttf');
 }
 
+:root {
+    /* Sizes */
+    --nav-size: 5.4rem;
+
+    /* Colors */
+    --back: linear-gradient(90deg, #D3CCE3 0%, #E9E4F0 100%);
+    --border: #b5adc5;
+
+    /* Fonts */
+    --f-b-12-u: 600 12pt Ubuntu;
+
+    /* Borders */
+    --border-solid: .1rem solid var(--border);
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(90deg, #D3CCE3 0%, #E9E4F0 100%);
+    background: var(--back);
     background-attachment: fixed;
 }
 
@@ -29,18 +44,4 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-track {
     background-color: #E9E4F0;
-}
-
-.fixed {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-.img-shadow {
-    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.8));
-}
-
-.link {
-    text-decoration: none;
 }

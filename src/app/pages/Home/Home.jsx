@@ -20,6 +20,7 @@ const Home = () => {
                 <img
                     src={SEROS}
                     alt="Logotipo SEROS"
+                    loading="lazy"
                     className="home__header--logo img-shadow"
                 />
                 <span className="home__header--seros">SEROS</span>
@@ -43,6 +44,7 @@ const Home = () => {
                     <img
                         src={HEART}
                         alt="Hecho con amor por el equipo SEROS"
+                        loading="lazy"
                         className="home__footer--heart"
                     />
                     por el equipo <strong>SEROS</strong>
