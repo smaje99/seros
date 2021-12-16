@@ -19,5 +19,5 @@
 
 .menu-modal__menu--item {
     padding: .8rem 0;
-    border-bottom: .1rem solid #b5adc5;
+    border-bottom: var(--border-solid);
 }

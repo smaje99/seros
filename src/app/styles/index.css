@@ -9,9 +9,18 @@
 }
 
 :root {
+    /* Sizes */
     --nav-size: 5.4rem;
+
+    /* Colors */
     --back: linear-gradient(90deg, #D3CCE3 0%, #E9E4F0 100%);
+    --border: #b5adc5;
+
+    /* Fonts */
     --f-b-12-u: 600 12pt Ubuntu;
+
+    /* Borders */
+    --border-solid: .1rem solid var(--border);
 }
 
 html {

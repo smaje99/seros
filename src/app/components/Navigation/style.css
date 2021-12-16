@@ -9,7 +9,7 @@
 }
 
 .navbar--border {
-    border-bottom: .1rem solid #b5adc5;
+    border-bottom: var(--border-solid);
 }
 
 .navbar__brand {
