@@ -1,4 +1,5 @@
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -21,6 +22,14 @@ const plugins = (mode) => (
         isProduction(mode) && new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css'
+        }),
+        isProduction(mode) && new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'public', 'assets'),
+                    to: path.resolve(__dirname, 'dist', 'assets')
+                }
+            ]
         })
     ].filter(Boolean)
 )
