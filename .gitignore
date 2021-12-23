@@ -2,6 +2,6 @@
 dist
 package-lock.json
 node_modules
-.env
+*.env
 stats.json
 .deta
