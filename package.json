@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/smaje99/seros/issues"
   },
-  "homepage": "https://github.com/smaje99/seros#readme",
+  "homepage": "https://smaje99.github.io/seros/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
