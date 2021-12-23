@@ -24,9 +24,6 @@ app.use(express.json());
 // Routes
 app.use('/api', require('./routes'));
 
-// Static files
-app.use('/', express.static(path.join(__dirname, '..', 'dist')));
-
 // Catch 404
 app.use(notFoundHandler);
 
