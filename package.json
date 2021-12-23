@@ -8,7 +8,8 @@
     "server": "nodemon src/index.js",
     "build": "webpack --mode=production",
     "dev": "webpack serve --mode=development",
-    "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
+    "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json",
+    "deploy": "npm run build && gh-pages -b deploy-gh-pages -d dist"
   },
   "repository": {
     "type": "git",
