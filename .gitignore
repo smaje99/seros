@@ -4,4 +4,4 @@ package-lock.json
 node_modules
 *.env
 stats.json
-.deta
+.deta*
