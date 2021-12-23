@@ -18,7 +18,9 @@ const plugins = (mode) => (
             template: path.join(__dirname, 'public', 'index.html'),
             inject: 'body'
         }),
-        new Dotenv(),
+        new Dotenv({
+            path: path.join(__dirname, isProduction(mode) ? '.env' : '.local.env')
+        }),
         isProduction(mode) && new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css'
