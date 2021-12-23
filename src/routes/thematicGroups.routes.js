@@ -1,6 +1,6 @@
 const express = require('express');
 
-const ThematicGroupsService = require('../services/ThematicGroups.service');
+const ThematicGroupsService = require('../services/thematicGroups.service');
 
 const nameSchema = require('../utils/schemas/thematicGroup');
 const validationHandler = require('../utils/middleware/validationHandler');
