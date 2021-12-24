@@ -3,19 +3,18 @@ import PropTypes from 'prop-types';
 
 import Card from 'Pages/Home/components/Card';
 
-import '../styles/Group.css';
+import { getThematicGroup } from 'Services/ThematicGroups';
 
-const API = process.env.API;
+import '../styles/Group.css';
 
 const Group = ({ name }) => {
     const [title, setTitle] = useState('Thematic')
     const [group, setGroup] = useState([]);
 
     const getGroup = async () => {
-        const res = await fetch(`${API}/thematicGroups/${name}`);
-        const data = await res.json();
-        setTitle(data.title);
-        setGroup(data.group);
+        const thematicGroup = await getThematicGroup(name);
+        setTitle(thematicGroup?.title);
+        setGroup(thematicGroup?.group);
     }
 
     useEffect(getGroup, []);
