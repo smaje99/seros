@@ -10,11 +10,17 @@ import '../styles/Group.css';
 const Group = ({ name }) => {
     const [title, setTitle] = useState('Thematic')
     const [group, setGroup] = useState([]);
+    const [error, setError] = useState('');
 
     const getGroup = async () => {
         const thematicGroup = await getThematicGroup(name);
-        setTitle(thematicGroup?.title);
-        setGroup(thematicGroup?.group);
+
+        if (thematicGroup?.err) {
+            setError(thematicGroup.msg);
+        } else {
+            setTitle(thematicGroup?.title);
+            setGroup(thematicGroup?.group);
+        }
     }
 
     useEffect(getGroup, []);
@@ -22,11 +28,13 @@ const Group = ({ name }) => {
     return (
         <section className="group">
             <h2 className="group--title">{title}</h2>
-            <ul className="group__content list">
-                {group.map(thematic => (
-                    <Card {...thematic} key={thematic.name} />
-                ))}
-            </ul>
+            {error
+                ? <p className="group__content--error">{error}</p>
+                : <ul className="group__content list">
+                    {group.map(thematic => (
+                        <Card {...thematic} key={thematic.name} />
+                    ))}
+                </ul>}
         </section>
     )
 }
