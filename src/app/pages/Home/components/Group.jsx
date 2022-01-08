@@ -40,13 +40,7 @@ const Group = ({ name }) => {
 }
 
 Group.prototype = {
-    title: PropTypes.string.isRequired,
-    group: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string,
-        path: PropTypes.string,
-        icon: PropTypes.string,
-        description: PropTypes.string
-    })).isRequired
+    name: PropTypes.string
 }
 
 export default Group;
