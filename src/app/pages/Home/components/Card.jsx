@@ -30,12 +30,10 @@ const Card = ({ name, path, icon, description }) => {
 }
 
 Card.propTypes = {
-    thematic: PropTypes.shape({
-        name: PropTypes.string,
-        path: PropTypes.string,
-        icon: PropTypes.string,
-        description: PropTypes.string
-    })
+    name: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 }
 
 export default Card;

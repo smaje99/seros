@@ -3,19 +3,24 @@ import PropTypes from 'prop-types';
 
 import Card from 'Pages/Home/components/Card';
 
-import '../styles/Group.css';
+import { getThematicGroup } from 'Services/ThematicGroups';
 
-const API = process.env.API;
+import '../styles/Group.css';
 
 const Group = ({ name }) => {
     const [title, setTitle] = useState('Thematic')
     const [group, setGroup] = useState([]);
+    const [error, setError] = useState('');
 
     const getGroup = async () => {
-        const res = await fetch(`${API}/thematicGroups/${name}`);
-        const data = await res.json();
-        setTitle(data.title);
-        setGroup(data.group);
+        const thematicGroup = await getThematicGroup(name);
+
+        if (thematicGroup?.err) {
+            setError(thematicGroup.msg);
+        } else {
+            setTitle(thematicGroup?.title);
+            setGroup(thematicGroup?.group);
+        }
     }
 
     useEffect(getGroup, []);
@@ -23,23 +28,19 @@ const Group = ({ name }) => {
     return (
         <section className="group">
             <h2 className="group--title">{title}</h2>
-            <ul className="group__content list">
-                {group.map(thematic => (
-                    <Card {...thematic} key={thematic.name} />
-                ))}
-            </ul>
+            {error
+                ? <p className="group__content--error">{error}</p>
+                : <ul className="group__content list">
+                    {group.map(thematic => (
+                        <Card {...thematic} key={thematic.name} />
+                    ))}
+                </ul>}
         </section>
     )
 }
 
 Group.prototype = {
-    title: PropTypes.string.isRequired,
-    group: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string,
-        path: PropTypes.string,
-        icon: PropTypes.string,
-        description: PropTypes.string
-    })).isRequired
+    name: PropTypes.string
 }
 
 export default Group;

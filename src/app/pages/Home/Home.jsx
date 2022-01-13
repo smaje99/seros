@@ -9,6 +9,9 @@ import './styles/Home.css';
 
 const groups = [ 'intro', 'algo', 'lineal', 'no-lineal' ]
 
+const title = 'Herramienta Pedagógica para la enseñanza de ' +
+    'Algoritmos y Estructura de Datos';
+
 const Home = () => {
     return (
         <>
@@ -24,10 +27,7 @@ const Home = () => {
                     className="home__header--logo img-shadow"
                 />
                 <span className="home__header--seros">SEROS</span>
-                <span className="home__header--title">
-                    Herramienta Pedagógica Educativa para
-                    Algoritmos y Estructura de Datos
-                </span>
+                <span className="home__header--title">{title}</span>
             </header>
 
             <main className="home__groups">
@@ -35,10 +35,7 @@ const Home = () => {
             </main>
 
             <footer className="home__footer">
-                <span className="home__footer--text">
-                    Herramienta Pedagógica Educativa para
-                    Algoritmos y Estructura de Datos
-                </span>
+                <span className="home__footer--text">{title}</span>
                 <span className="home__footer--text">
                     Hecho con
                     <img

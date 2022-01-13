@@ -6,6 +6,7 @@ import SearchBar from 'Components/SearchBar';
 
 import useModal from 'Hooks/useModal';
 
+import menuList from 'Helpers/menuList';
 import routes from 'Helpers/routes';
 import { scrollTo, scrollTop, eventScroll } from 'Utils/scroll';
 import screen, { eventResize } from 'Utils/screen';
@@ -73,16 +74,14 @@ const Navigation = () => {
                 </NavLink>
 
                 <ul className="navbar__nav list">
-                    <li className="navbar__nav--item">
-                        <NavLink className="navbar__link link list-item" to={routes.notes}>
-                            Apuntes
-                        </NavLink>
-                    </li>
-                    <li className="navbar__nav--item">
-                        <NavLink className="navbar__link link list-item" to={routes.about}>
-                            Acerca de
-                        </NavLink>
-                    </li>
+                    {menuList.map(({name, route}) => (
+                        <li className="navbar__nav--item" key={name}>
+                            <NavLink className="navbar__link link list-item" to={route}>
+                                {name}
+                            </NavLink>
+                        </li>
+                    ))}
+
                     <li className="navbar__nav--item">
                         <div className="navbar__nav--vertical-separator"></div>
                     </li>

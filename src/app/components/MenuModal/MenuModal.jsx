@@ -4,7 +4,7 @@ import ReactModal from 'react-modal';
 
 import SearchBar from 'Components/SearchBar';
 
-import routes from 'Helpers/routes';
+import menuList from 'Helpers/menuList';
 
 import './style.css';
 
@@ -15,24 +15,17 @@ const MenuModal = ({ isOpen, close }) => {
                 <SearchBar activate staticComponent noFocus/>
             </div>
             <ul className="menu-modal__menu list">
-                <li className="menu-modal__menu--item">
-                    <Link
-                        className="menu-modal__link link list-item"
-                        to={routes.notes}
-                        onClick={close}
-                    >
-                        Apuntes
-                    </Link>
-                </li>
-                <li className="menu-modal__menu--item">
-                    <Link
-                        className="menu-modal__link link list-item"
-                        to={routes.about}
-                        onClick={close}
-                    >
-                        Acerca de
-                    </Link>
-                </li>
+                {menuList.map(({name, route}) => (
+                    <li className="menu-modal__menu--item" key={name}>
+                        <Link
+                            className="menu-modal__link link list-item"
+                            to={route}
+                            onClick={close}
+                        >
+                            {name}
+                        </Link>
+                    </li>
+                ))}
             </ul>
         </ReactModal>
     )
