@@ -30,6 +30,10 @@ const plugins = (mode) => (
                 {
                     from: path.resolve(__dirname, 'public', 'assets'),
                     to: path.resolve(__dirname, 'dist', 'assets')
+                },
+                {
+                    from: path.resolve(__dirname, 'public', 'icon.svg'),
+                    to: path.resolve(__dirname, 'dist', 'icon.svg')
                 }
             ]
         })
