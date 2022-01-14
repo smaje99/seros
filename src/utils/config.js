@@ -7,5 +7,6 @@ module.exports = {
     DETA: {
         ID: process.env.DETA_ID,
         KEY: process.env.DETA_KEY
-    }
+    },
+    dev: process.env.NODE_ENV !== 'production'
 }
