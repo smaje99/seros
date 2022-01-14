@@ -8,8 +8,8 @@ const {
     logErrors,
     wrapErrors,
     errorHandler
-} = require('./utils/middleware/errorHandlers');
-const notFoundHandler = require('./utils/middleware/notFoundHandler');
+} = require('./middleware/errorHandlers');
+const notFoundHandler = require('./middleware/notFoundHandler');
 
 const app = express();
 
