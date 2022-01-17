@@ -15,11 +15,11 @@ const Group = ({ name }) => {
     const getGroup = async () => {
         const thematicGroup = await getThematicGroup(name);
 
-        if (thematicGroup?.err) {
-            setError(thematicGroup.msg);
-        } else {
+        if (!thematicGroup?.err) {
             setTitle(thematicGroup?.title);
             setGroup(thematicGroup?.group);
+        } else {
+            setError(thematicGroup?.msg ?? 'Error');
         }
     }
 
