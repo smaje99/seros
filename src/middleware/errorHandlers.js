@@ -15,7 +15,7 @@ function withErrorStack(error, stack) {
  * @param {*} next next middleware callback
  */
 function logErrors(err, req, res, next) {
-    console.log(err);
+    console.error(err);
     next(err);
 }
 
