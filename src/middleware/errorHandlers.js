@@ -6,6 +6,14 @@ function withErrorStack(error, stack) {
     return config.dev ? { ...error, stack } : error;
 }
 
+
+/**
+ * Track errors in the application
+ * @param {*} err error
+ * @param {*} req request
+ * @param {*} res response
+ * @param {*} next next middleware callback
+ */
 function logErrors(err, req, res, next) {
     console.log(err);
     next(err);
