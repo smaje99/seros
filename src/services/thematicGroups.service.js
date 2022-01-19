@@ -1,6 +1,6 @@
 const boom = require('@hapi/boom');
 
-const ThematicGroup = require('../models/ThematicGroup');
+const ThematicGroup = require('../models/ThematicGroup.model');
 
 const model = new ThematicGroup();
 
