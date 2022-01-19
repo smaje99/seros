@@ -3,7 +3,7 @@ const express = require('express');
 const ThematicGroupsService = require('../services/thematicGroups.service');
 
 const nameSchema = require('../schemas/thematicGroup.schemas');
-const validationHandler = require('../middleware/validationHandler');
+const validationHandler = require('../middleware/validation.handler');
 
 const router = express.Router();
 
