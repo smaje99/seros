@@ -20,6 +20,7 @@ router.get('/:name',
         } catch(err) {
             next(err)
         }
-})
+    }
+)
 
 module.exports = router;
