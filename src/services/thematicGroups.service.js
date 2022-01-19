@@ -1,10 +1,17 @@
+const boom = require('@hapi/boom');
+
 const ThematicGroup = require('../models/ThematicGroup');
 
 const model = new ThematicGroup();
 
 class ThematicGroupService {
-    getThematicGroup(name) {
-        return model.get(name);
+    async getThematicGroup(name) {
+        try {
+            const thematicGroup = await model.get(name);
+            return thematicGroup;
+        } catch {
+            throw boom.notFound('Thematic group not found');
+        }
     }
 }
 
