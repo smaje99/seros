@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const path = require('path');
 
 const { PORT } = require('./utils/config');
 const {
@@ -17,7 +16,7 @@ const app = express();
 app.set('port', PORT);
 
 // Middleware
-app.use(cors());
+app.use(cors(require('./utils/corsOptions')));
 app.use(morgan('dev'));
 app.use(express.json());
 
