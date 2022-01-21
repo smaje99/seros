@@ -48,12 +48,13 @@ function wrapErrors(err, req, res, next) {
  */
 function errorHandler(err, req, res, next) {
     const {
-        output: { statusCode, payload }
+        output: { statusCode, payload },
+        headers
     } = err;
 
     res
         .status(statusCode)
-        .json(withErrorStack(payload, err.stack));
+        .json(withErrorStack({ ...payload, headers }, err.stack));
 }
 
 module.exports = {
