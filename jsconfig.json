@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es2021",
+        "allowSyntheticDefaultImports": false,
+        "baseUrl": "./",
+        "paths": {
+            "Pages/*": [ "src/app/pages/*" ],
+            "Auth/*": [ "src/app/auth/*" ],
+            "Routers/*": [ "src/routers/*" ],
+            "Helpers/*": [ "src/app/helpers/*" ],
+            "Utils/*": [ "src/app/utils/*" ],
+            "Components/*": [ "src/app/components/*" ],
+            "Images/*": [ "src/app/assets/images/*" ],
+            "Hooks/*": [ "src/app/hooks/*" ],
+            "Services/*": [ "src/app/services/*" ]
+        }
+    },
+    "exclude": [ "node_modules", "dist", "public", ".deta", ".vscode" ]
+}
