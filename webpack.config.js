@@ -2,9 +2,12 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const esbuild = require('esbuild');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const { ProvidePlugin } = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = (mode) => mode === 'production';
@@ -21,6 +24,7 @@ const plugins = (mode) => (
         new Dotenv({
             path: path.join(__dirname, isProduction(mode) ? '.env' : '.local.env')
         }),
+        new ProvidePlugin({ React: 'react' }),
         isProduction(mode) && new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css'
@@ -41,25 +45,18 @@ const plugins = (mode) => (
 )
 
 // rules
-const rulesBabel = (mode) => ({
+const rulesScripts = {
     test: /\.jsx?$/i,
     exclude: /node_modules/,
     use: {
-        loader: 'babel-loader',
+        loader: 'esbuild-loader',
         options: {
-            presets: [
-                ['@babel/preset-env', {
-                    useBuiltIns: 'usage',
-                    corejs: 3.18
-                }],
-                ['@babel/preset-react', {
-                    runtime: 'automatic',
-                    development: isDevelopment(mode)
-                }]
-            ],
+            loader: 'jsx',
+            target: 'es2021',
+            implementation: esbuild
         }
     }
-})
+}
 
 const rulesStyles = (mode) => ({
     test: /\.css$/i,
@@ -82,7 +79,7 @@ const rulesImages = {
 }
 
 const rulesCommon = (mode) => [
-    rulesBabel(mode),
+    rulesScripts,
     rulesStyles(mode),
     rulesFonts,
     rulesImages
@@ -108,7 +105,8 @@ const optimization = {
     minimize: true,
     minimizer: [
         new TerserPlugin(),
-        new CssMinimizerPlugin()
+        new CssMinimizerPlugin(),
+        new ESBuildMinifyPlugin({ target: 'es2021' })
     ],
     splitChunks: {
         chunks: 'all'
