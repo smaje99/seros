@@ -6,11 +6,16 @@
 }
 
 .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1.6s;
+}
+
+.card,
+.card__side,
+.card__body {
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transition: 2s;
-    position: relative;
 }
 
 .card__side--back,
@@ -18,23 +23,18 @@
     transform: rotateY(180deg);
 }
 
-.card__body {
-    display: flex;
-    justify-content: center;
-    transform: translateZ(6rem);
-}
-
-.card__body,
-.card__side {
-    width: 100%;
-    height: 100%;
-}
-
 .card__side {
     backface-visibility: hidden;
     position: absolute;
     border-radius: 5rem;
     background: linear-gradient(225deg, #c0a0b0, #c3e1e2);
+    transform-style: preserve-3d;
+}
+
+.card__body {
+    display: flex;
+    justify-content: center;
+    transform: translateZ(2.8rem);
 }
 
 .card__side--back,
@@ -44,7 +44,7 @@
         10px -10px 30px #84769c;
 }
 
-.card__body--name {
+.card--name {
     align-self: flex-end;
     position: absolute;
     margin-bottom: 25px;
@@ -56,14 +56,14 @@
     user-select: none;
 }
 
-.card__body--icon {
+.card--icon {
     width: 100px;
     height: 100px;
     align-self: stretch;
     margin-top: 25px;
 }
 
-.card__body--path {
+.card--path {
     align-self: flex-end;
     position: absolute;
     color: #e5ddf0;
@@ -76,16 +76,16 @@
     cursor: pointer;
     font: var(--f-b-12-u);
     letter-spacing: .005em;
-    transition: box-shadow 0.2s;
 }
 
-.card__body--path:hover {
+.card--path:hover {
+    transition: box-shadow 600ms;
     box-shadow:
         3px 3px 10px #0065cf,
         -3px -3px 10px #0065cf;
 }
 
-.card__body--description {
+.card--description {
     width: 80%;
     align-self: flex-start;
     margin: 18px auto 5px;

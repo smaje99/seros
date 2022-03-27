@@ -15,15 +15,15 @@ const Card = ({ name, path, icon, description }) => {
                             src={icon}
                             alt="temática"
                             loading="lazy"
-                            className="card__body--icon img-shadow"
+                            className="card--icon img-shadow"
                         />
-                        <span className="card__body--name">{name}</span>
+                        <span className="card--name">{name}</span>
                     </div>
                 </div>
                 <div className="card__side card__side--back">
                     <div className="card__body">
-                        <p className="card__body--description">{description}</p>
-                        <Link className="card__body--path link" to={routes.thematic(path)}>
+                        <p className="card--description">{description}</p>
+                        <Link className="card--path link" to={routes.thematic(path)}>
                             Ver más
                         </Link>
                     </div>
