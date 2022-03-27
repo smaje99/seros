@@ -53,6 +53,7 @@
     letter-spacing: .005em;
     text-align: center;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
+    user-select: none;
 }
 
 .card__body--icon {
@@ -92,4 +93,5 @@
     text-align: left;
     font: 13px OpenSans;
     line-height: 22px;
+    user-select: none;
 }
