@@ -10,19 +10,23 @@ const Card = ({ name, path, icon, description }) => {
         <li className="card-content">
             <div className="card">
                 <div className="card__side card__side--front">
-                    <img
-                        src={icon}
-                        alt="temática"
-                        loading="lazy"
-                        className="card--icon img-shadow"
-                    />
-                    <span className="card--name">{name}</span>
+                    <div className="card__body">
+                        <img
+                            src={icon}
+                            alt="temática"
+                            loading="lazy"
+                            className="card--icon img-shadow"
+                        />
+                        <span className="card--name">{name}</span>
+                    </div>
                 </div>
                 <div className="card__side card__side--back">
-                    <p className="card--description">{description}</p>
-                    <Link className="card--path link" to={routes.thematic(path)}>
-                        Ver más
-                    </Link>
+                    <div className="card__body">
+                        <p className="card--description">{description}</p>
+                        <Link className="card--path link" to={routes.thematic(path)}>
+                            Ver más
+                        </Link>
+                    </div>
                 </div>
             </div>
         </li>
