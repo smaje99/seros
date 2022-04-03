@@ -105,7 +105,9 @@ const optimization = {
     minimize: true,
     minimizer: [
         new TerserPlugin(),
-        new CssMinimizerPlugin(),
+        new CssMinimizerPlugin({
+	    minify: CssMinimizerPlugin.parcelCssMinify
+	}),
         new ESBuildMinifyPlugin({ target: 'es2021' })
     ],
     splitChunks: {
