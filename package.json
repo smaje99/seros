@@ -7,6 +7,7 @@
     "start": "node src/index.js",
     "server": "nodemon src/index.js",
     "build": "webpack --mode=production",
+    "postbuild": "react-snap",
     "dev": "webpack serve --mode=development",
     "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json",
     "deploy": "npm run build && gh-pages -b deploy-gh-pages -d dist"
@@ -26,6 +27,13 @@
     "url": "https://github.com/smaje99/seros/issues"
   },
   "homepage": "https://smaje99.github.io/seros/",
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapsedWhitespace": false,
+      "removeComments": false
+    }
+  },
   "dependencies": {
     "@hapi/boom": "^9.1.4",
     "cors": "^2.8.5",
@@ -57,6 +65,7 @@
     "react-helmet": "^6.1.0",
     "react-modal": "^3.14.4",
     "react-router-dom": "^6.2.1",
+    "react-snap": "^1.13.1",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.70.0",
