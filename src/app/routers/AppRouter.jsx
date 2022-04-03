@@ -1,28 +1,54 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import PrivateRoutes from './PrivateRoutes';
 
 import Layout from 'Components/Layout';
+import { Spinner } from 'Components/Preloaders';
 
-import About from 'Pages/About';
-import Home from 'Pages/Home';
-import Login from 'Pages/Login';
-import Notes from 'Pages/Notes';
+const About = lazy(() => import('Pages/About'));
+const Home = lazy(() => import('Pages/Home'));
+const Login = lazy(() => import('Pages/Login'));
+const Notes = lazy(() => import('Pages/Notes'));
 import NotFoundPage from 'Pages/NotFoundPage';
-import Register from 'Pages/Register';
-import Thematic from 'Pages/Thematic';
+const Register = lazy(() => import('Pages/Register'));
+const Thematic = lazy(() => import('Pages/Thematic'));
 
 const AppRouter = () => (
     <Routes>
         <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="about" element={<About />} />
-            <Route path="thematic" element={<Thematic />} />
+            <Route index element={
+                <Suspense fallback={<Spinner />}>
+                    <Home />
+                </Suspense>
+            } />
+            <Route path="login" element={
+                <Suspense fallback={<Spinner />}>
+                    <Login />
+                </Suspense>
+            } />
+            <Route path="register" element={
+                <Suspense fallback={<Spinner />}>
+                    <Register />
+                </Suspense>
+            } />
+            <Route path="about" element={
+                <Suspense fallback={<Spinner />}>
+                    <About />
+                </Suspense>
+            } />
+            <Route path="thematic" element={
+                <Suspense fallback={<Spinner />}>
+                    <Thematic />
+                </Suspense>
+            } />
 
             <Route element={<PrivateRoutes />}>
-                <Route path="notes" element={<Notes />} />
+                <Route path="notes" element={
+                    <Suspense fallback={<Spinner />}>
+                        <Notes />
+                    </Suspense>
+                } />
             </Route>
 
             <Route path="*" element={<NotFoundPage />} />
