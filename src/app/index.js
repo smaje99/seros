@@ -5,6 +5,7 @@ import 'normalize.css';
 import './styles/index.css';
 import './styles/rules.css';
 import './styles/animations.css';
+import './styles/laptop.css';
 
 import App from './App';
 
