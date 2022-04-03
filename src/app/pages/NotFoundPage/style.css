@@ -1,0 +1,28 @@
+.not-found {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12rem;
+}
+
+.not-found__content {
+    display: grid;
+    grid-gap: .8rem;
+}
+
+.not-found__content > * {
+    text-align: center;
+    color: #111;
+    letter-spacing: 0.045em;
+}
+
+.not-found__content--pre-message {
+    font: italic 600 24pt Ubuntu;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.not-found__content--message {
+    font: italic 500 16pt OpenSans;
+}
