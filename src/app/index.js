@@ -1,4 +1,4 @@
-import ReactDom from "react-dom";
+import { hydrate, render} from "react-dom";
 import ReactModal from 'react-modal';
 
 import 'normalize.css';
@@ -12,4 +12,8 @@ const app = document.getElementById('app');
 
 ReactModal.setAppElement(app);
 
-ReactDom.render(<App />, app);
+if(app.hasChildNodes()) {
+    hydrate(<App />, app);
+} else {
+    render(<App />, app);
+}
