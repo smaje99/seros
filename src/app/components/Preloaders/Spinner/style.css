@@ -1,0 +1,37 @@
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    height: 10rem;
+}
+
+.spinner__point {
+    border: 0;
+    margin: 0;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    border-radius: 50%;
+    animation: spin 2s ease infinite;
+}
+
+.spinner :first-child {
+    background-color: #19A68C;
+    animation-delay: -1.5s;
+}
+
+.spinner :nth-child(2) {
+    background-color: #F63D3A;
+    animation-delay: -1s;
+}
+
+.spinner :nth-child(3) {
+    background-color:#FDA543;
+    animation-delay:-0.5s;
+}
+
+.spinner :last-child {
+    background-color:#193B48;
+}
