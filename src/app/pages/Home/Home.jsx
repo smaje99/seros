@@ -19,34 +19,36 @@ const Home = () => {
                 <title>Inicio | SEROS</title>
             </Helmet>
 
-            <header className="home__header">
-                <img
-                    src={SEROS}
-                    alt="Logotipo SEROS"
-                    loading="lazy"
-                    className="home__header--logo img-shadow"
-                />
-                <span className="home__header--seros">SEROS</span>
-                <span className="home__header--title">{title}</span>
-            </header>
-
-            <main className="home__groups">
-                {groups.map(name => <Group name={name} key={name} />)}
-            </main>
-
-            <footer className="home__footer">
-                <span className="home__footer--text">{title}</span>
-                <span className="home__footer--text">
-                    Hecho con
+            <div className="home">
+                <header className="home__header">
                     <img
-                        src={HEART}
-                        alt="Hecho con amor por el equipo SEROS"
+                        src={SEROS}
+                        alt="Logotipo SEROS"
                         loading="lazy"
-                        className="home__footer--heart"
+                        className="home__header--logo img-shadow"
                     />
-                    por el equipo <strong>SEROS</strong>
-                </span>
-            </footer>
+                    <span className="home__header--seros">SEROS</span>
+                    <span className="home__header--title">{title}</span>
+                </header>
+
+                <main className="home__groups">
+                    {groups.map(name => <Group name={name} key={name} />)}
+                </main>
+
+                <footer className="home__footer">
+                    <span className="home__footer--text">{title}</span>
+                    <span className="home__footer--text">
+                        Hecho con
+                        <img
+                            src={HEART}
+                            alt="Hecho con amor por el equipo SEROS"
+                            loading="lazy"
+                            className="home__footer--heart"
+                        />
+                        por el equipo <strong>SEROS</strong>
+                    </span>
+                </footer>
+            </div>
         </>
     );
 }

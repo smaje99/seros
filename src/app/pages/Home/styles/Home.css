@@ -1,3 +1,7 @@
+.home {
+    flex: 1;
+}
+
 .home__header {
     height: calc(100vh - var(--nav-size));
     display: flex;

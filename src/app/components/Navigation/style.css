@@ -3,7 +3,6 @@
     place-content: baseline space-between;
     align-items: center;
     flex-flow: row nowrap;
-    top: 0;
     border-bottom: none;
     background: var(--back);
 }
